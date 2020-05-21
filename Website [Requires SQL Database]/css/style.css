@@ -1,0 +1,194 @@
+/* Index Discord Login Screen */
+body#discord-login {
+    text-align: center;
+    background: url("img/background-discord-login.jpg");
+}
+div.login-section {
+    margin-top: 10%;
+    background-color: #202225;
+    height: 350px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-radius: 15px;
+}
+div.login-section img {
+    height: 250px;
+    width: 250px;
+}
+a#login {}
+div.login-button-div {
+    background-color: #5d6fb9;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+div.login-button-div:hover {
+    cursor: pointer;
+}
+a#login img {
+    height: 80px;
+    width: 80px;
+    vertical-align: middle;
+}
+div.login-button-div button {
+    font-size: 24px;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    color: white;
+    vertical-align: middle;
+}
+div.login-button-div button:hover {
+    cursor: pointer;
+}
+
+/* Index Logged_In Screen */
+body#background {
+    background-color: #F1F1F1;
+}
+div.row.contain {
+    flex-wrap: nowrap;
+}
+div.content-contain {
+    display: block;
+    width: 100%;
+}
+div.header {
+    background-color: white;
+    display: block;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-left: 50px;
+    width: 100%;
+    height: 50px;
+}
+div.stats-row {
+    display: inline-block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 30px;
+}
+div.stats-row div.stat-box {
+    min-width: 200px;
+    height: 80px;
+    margin-left: 20px;
+    display: inline-block;
+    color: white;
+    margin-bottom: 20px;
+}
+div.stats-row div.stat-box.col-1 {
+    padding-left: 0;
+    padding-right: 0;
+}
+div.stats-row div.stat-box span {
+    font-size: 24px;
+    width: 100%;
+    display: block;
+}
+div.stats-row div.stat-box p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+/* Stats-Box colors */
+div.stat-box.stat-color-yellow {
+    background-color: #cbcb00;
+}
+div.stat-box.stat-color-yellow span {
+    background-color: #aaaa00;
+}
+div.stat-box.stat-color-green {
+    background-color: green;
+}
+div.stat-box.stat-color-green span {
+    background-color: #005d00;
+}
+div.stat-box.stat-color-blue {
+    background-color: blue;
+}
+div.stat-box.stat-color-blue span {
+    background-color: #0000bd;
+}
+div.stat-box.stat-color-darkblue {
+    background-color: darkblue;
+}
+div.stat-box.stat-color-darkblue span {
+    background-color: #000065;
+}
+div.stat-box.stat-color-gray {
+    background-color: gray;
+}
+
+div.stat-box.stat-color-gray span {
+    background-color: #686868;
+}
+
+div#online-players {
+    font-size: 20px;
+    background-color: white;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+}
+div#online-players thead {
+    font-weight: bolder;
+    font-size: 24px;
+}
+div#online-players button {
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+div#online-players button.note {
+    background-color: #219FB1;
+    border-bottom: 3px solid #166f86;
+    border-right: 3px solid #166f86;
+}
+div#online-players button.note:hover {
+    border-bottom: 3px solid #219FB1;
+    border-right: 3px solid #219FB1;
+}
+div#online-players button.warn {
+    background-color: #CBCB00;
+    border-bottom: 3px solid #AAAA00;
+    border-right: 3px solid #AAAA00;
+}
+div#online-players button.warn:hover {
+    border-bottom: 3px solid #CBCB00;
+    border-right: 3px solid #CBCB00;
+}
+div#online-players button.kick {
+    background-color: #008000;
+    border-bottom: 3px solid #005D00;
+    border-right: 3px solid #005D00;
+}
+div#online-players button.kick:hover {
+    border-bottom: 3px solid #008000;
+    border-right: 3px solid #008000;
+}
+div#online-players button.tempban {
+    background-color: #00008B;
+    border-bottom: 3px solid #000065;
+    border-right: 3px solid #000065;
+}
+div#online-players button.tempban:hover {
+    border-bottom: 3px solid #00008B;
+    border-right: 3px solid #00008B;
+}
+div#online-players button.ban {
+    background-color: #0000FF;
+    border-bottom: 3px solid #0000BD;
+    border-right: 3px solid #0000BD;
+}
+div#online-players button.ban:hover {
+    border-bottom: 3px solid #0000FF;
+    border-right: 3px solid #0000FF;
+}

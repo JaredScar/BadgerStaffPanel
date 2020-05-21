@@ -1,0 +1,39 @@
+.row.sidebar-row {
+    margin-left: 0;
+    margin-right: 0;
+    width: 400px;
+    display: inline-block;
+    vertical-align: top;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+div#main-sidebar {
+    background-color: #4B74CB;
+    height: 100%;
+    min-height: 100vh;
+    width: 400px;
+    font-size: 24px;
+    color: white;
+    padding-left: 50px;
+}
+div#main-sidebar a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 80px;
+}
+div#main-sidebar div.row.main-title {
+    margin-left: auto;
+    margin-right: auto;
+}
+div#main-sidebar span#main-title {
+    font-size: 32px;
+}
+div#main-sidebar span.main-sect {
+    display: block;
+}
+div#main-sidebar a span.main-sect:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -1,0 +1,68 @@
+div#content-players {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 95%;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    padding: 30px;
+    display: table;
+}
+div#content-players div#search-bar {
+    float: right;
+    margin-bottom: 30px;
+}
+div#content-players div#search-bar input {
+    height: 26px;
+    border: 1px solid black;
+    font-size: 14px;
+}
+div#content-players div#search-bar button {
+    border: none;
+    background-color: #5880ff;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    border-bottom: 3px solid #4260c1;
+    border-right: 3px solid #4260c1;
+    text-transform: uppercase;
+    height: 30px;
+    vertical-align: top;
+}
+div#content-players div#search-bar button:hover {
+    border-bottom: 3px solid #5880ff;
+    border-right: 3px solid #5880ff;
+}
+div#content-players table {}
+div#content-players thead {
+    font-size: 18px;
+    font-weight: bold;
+}
+div#content-players tr {
+    font-size: 14px;
+    text-align: center;
+}
+button#load-more {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 100%;
+    color: white;
+    background-color: gray;
+    font-size: 24px;
+    border: 0;
+    border-radius: 15px;
+}
+button#load-more:hover {
+    background-color: #9e9e9e;
+    color: black;
+}
+img#load-gif {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 50px;
+}

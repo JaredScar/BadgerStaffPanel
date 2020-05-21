@@ -1,0 +1,105 @@
+body#background {
+    background-color: #F1F1F1;
+}
+div#content-view {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 95%;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    padding: 30px;
+}
+/** / Profile-Info /**/
+div#profile-info {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+div#profile-info img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+div#profile-info span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+div#profile-info span.profile-name {
+    font-size: 28px;
+}
+div#profile-info span.profile-data {}
+div#profile-info span.profile-data p {}
+div#profile-info span.profile-data p img {
+    height: 30px;
+    width: 30px;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+div#tables-contain {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+}
+div#tables-contain h2 {
+    font-weight: bolder;
+    font-size: 26px;
+    margin-top: 50px;
+}
+div#tables-contain thead {
+    font-weight: bold;
+}
+div#tables-contain button {
+    width: 80px;
+    border: 0;
+    border-radius: 5px;
+}
+div#tables-contain button.add {
+    color: white;
+    background-color: #00d600;
+    border-bottom: 3px solid #009700;
+    border-right: 3px solid #009700;
+}
+div#tables-contain button.add:hover {
+    border-bottom: 3px solid #00d600;
+    border-right: 3px solid #00d600;
+}
+div#tables-contain button.remove {
+    color: white;
+    background-color: #ed1100;
+    border-bottom: 3px solid #910b00;
+    border-right: 3px solid #910b00;
+}
+div#tables-contain button.remove:hover {
+    border-bottom: 3px solid #ed1100;
+    border-right: 3px solid #ed1100;
+}
+div#tables-contain button.appeal {
+    background-color: purple;
+    color: white;
+    border: 3px;
+    border-bottom: 3px solid #5b005b;
+    border-right: 3px solid #5b005b;
+}
+div#tables-contain button.appeal:hover {
+    border-bottom: 3px solid purple;
+    border-right: 3px solid purple;
+}
+/** / Note-Info /**/
+div#note-info {}
+/** / Warn-Info /**/
+div#warn-info {}
+/** / Kick-Info /**/
+div#kick-info {}
+/** / Tempban-Info /**/
+div#tempban-info {}
+/** / Ban-Info /**/
+div#ban-info {}
