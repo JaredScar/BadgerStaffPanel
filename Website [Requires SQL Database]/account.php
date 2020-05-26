@@ -45,9 +45,10 @@ if (is_logged_in()) {
                         $steamI = str_replace("steam:", "", $row['steamID']);
                         $steamID = bchexdec($steamI);
                         $discordID = $row['discord'];
-                        $live = $row['live']; 
-						// TODO Put your steam key replacing {KEY} 
-                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+                        $live = $row['live'];
+						global $steamAPIkey;
+                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                            '&steamids=' . $steamID);
                         $steamData = json_decode($steamAPI)->response->players[0];
                         $avatarLink = $steamData->avatarmedium;
                         echo '<span><img src="' . $avatarLink . '" /></span>';
@@ -118,8 +119,9 @@ if (is_logged_in()) {
                                     echo '<td>' . $row['note'] . '</td>';
                                     $steamID = bchexdec(str_replace("steam:", "", $row[$issuedByField]));
                                     if ($steamID != 0) {
-										// TODO Replace {KEY} with your steam API key 
-                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+										global $steamAPIkey;
+                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                                            '&steamids=' . $steamID);
                                         $steamData = json_decode($steamAPI)->response->players[0];
                                         echo '<td>' . $steamData->personaname . '</td>';
                                     }
@@ -157,8 +159,9 @@ if (is_logged_in()) {
                                     echo '<td>' . $row['reason'] . '</td>';
                                     $steamID = bchexdec(str_replace("steam:", "", $row[$issuedByField]));
                                     if ($steamID != 0) {
-										// TODO Replace {KEY} with your Steam API key 
-                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+										global $steamAPIkey;
+                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                                            '&steamids=' . $steamID);
                                         $steamData = json_decode($steamAPI)->response->players[0];
                                         echo '<td>' . $steamData->personaname . '</td>';
                                     }
@@ -196,8 +199,9 @@ if (is_logged_in()) {
                                     echo '<td>' . $row['reason'] . '</td>';
                                     $steamID = bchexdec(str_replace("steam:", "", $row[$issuedByField]));
                                     if ($steamID != 0) {
-										// Replace {KEY} with your Steam API key 
-                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+										global $steamAPIkey;
+                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                                            '&steamids=' . $steamID);
                                         $steamData = json_decode($steamAPI)->response->players[0];
                                         echo '<td>' . $steamData->personaname . '</td>';
                                     }
@@ -236,8 +240,9 @@ if (is_logged_in()) {
                                     echo '<td>' . $row['reason'] . '</td>';
                                     $steamID = bchexdec(str_replace("steam:", "", $row[$issuedByField]));
                                     if ($steamID != 0) {
-										// TODO Replace {KEY} with your Steam API key 
-                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+										global $steamAPIkey;
+                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                                            '&steamids=' . $steamID);
                                         $steamData = json_decode($steamAPI)->response->players[0];
                                         echo '<td>' . $steamData->personaname . '</td>';
                                     }
@@ -277,8 +282,9 @@ if (is_logged_in()) {
                                     echo '<td>' . $row['reason'] . '</td>';
                                     $steamID = bchexdec(str_replace("steam:", "", $row[$issuedByField]));
                                     if ($steamID != 0) {
-										// TODO Replace {KEY} with your Steam API key 
-                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+										global $steamAPIkey;
+                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                                            '&steamids=' . $steamID);
                                         $steamData = json_decode($steamAPI)->response->players[0];
                                         echo '<td>' . $steamData->personaname . '</td>';
                                     }
@@ -341,8 +347,9 @@ if (is_logged_in()) {
                             $steamID = bchexdec($steamI);
                             $discordID = $row['discord'];
                             $live = $row['live'];
-							// TODO Replace {KEY} with your Steam API key 
-                            $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+							global $steamAPIkey;
+                            $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                                '&steamids=' . $steamID);
                             $steamData = json_decode($steamAPI)->response->players[0];
                             $avatarLink = $steamData->avatarmedium;
                             echo '<span><img src="' . $avatarLink . '" /></span>';
@@ -410,8 +417,9 @@ if (is_logged_in()) {
                                         echo '<td>' . $row['reason'] . '</td>';
                                         $steamID = bchexdec(str_replace("steam:", "", $row[$issuedByField]));
                                         if ($steamID != 0) {
-											// TODO Replace {KEY} with your Steam API key 
-                                            $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+											global $steamAPIkey;
+                                            $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                                                '&steamids=' . $steamID);
                                             $steamData = json_decode($steamAPI)->response->players[0];
                                             echo '<td>' . $steamData->personaname . '</td>';
                                         }
@@ -446,8 +454,9 @@ if (is_logged_in()) {
                                         echo '<td>' . $row['reason'] . '</td>';
                                         $steamID = bchexdec(str_replace("steam:", "", $row[$issuedByField]));
                                         if ($steamID != 0) {
-											// TODO Replace {KEY} with your Steam API key 
-                                            $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+											global $steamAPIkey;
+                                            $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                                                '&steamids=' . $steamID);
                                             $steamData = json_decode($steamAPI)->response->players[0];
                                             echo '<td>' . $steamData->personaname . '</td>';
                                         }
@@ -483,8 +492,9 @@ if (is_logged_in()) {
                                         echo '<td>' . $row['reason'] . '</td>';
                                         $steamID = bchexdec(str_replace("steam:", "", $row[$issuedByField]));
                                         if ($steamID != 0) {
-											// TODO Replace {KEY} with your Steam API key 
-                                            $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+											global $steamAPIkey;
+                                            $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                                                '&steamids=' . $steamID);
                                             $steamData = json_decode($steamAPI)->response->players[0];
                                             echo '<td>' . $steamData->personaname . '</td>';
                                         }
@@ -522,8 +532,9 @@ if (is_logged_in()) {
                                         echo '<td>' . $row['reason'] . '</td>';
                                         $steamID = bchexdec(str_replace("steam:", "", $row[$issuedByField]));
                                         if ($steamID != 0) {
-											// TODO Replace {KEY} with your Steam API key 
-                                            $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+											global $steamAPIkey;
+                                            $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steamAPIkey .
+                                                '&steamids=' . $steamID);
                                             $steamData = json_decode($steamAPI)->response->players[0];
                                             echo '<td>' . $steamData->personaname . '</td>';
                                         }

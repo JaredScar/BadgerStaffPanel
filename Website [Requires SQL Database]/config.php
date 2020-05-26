@@ -3,12 +3,21 @@ $clientID = '';
 $clientSecret = '';
 $redirect_URI = '';
 $guildID = '';
+$discordRedirectAuth = '';
 $serverIP = '';
-$port = ; // Website port
+$port = 80; // Website port
+$steamAPIkey = '';
 $server_port = 30212;
 $rconPassword = '';
 $serverName = 'Prime Network';
 $botToken = '';
+
+// SQL INFO
+$host = '';
+$username = '';
+$password = '';
+$db = '';
+$port = 3306;
 
 $permissionsSetup = [
     '577631197987995678' => [// Start T-Mod

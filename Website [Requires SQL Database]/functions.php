@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'config.php';
 function bchexdec($hex)
 {
     $dec = 0;
@@ -11,11 +12,11 @@ function bchexdec($hex)
 }
 
 function getSQL() {
-    $host = '';
-    $username = '';
-    $password = '';
-    $db = '';
-    $port = 3306;
+    global $host;
+    global $username;
+    global $password;
+    global $db;
+    global $port;
     $sql = new mysqli($host, $username, $password, $db, $port);
     return $sql;
 }

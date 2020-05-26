@@ -174,7 +174,10 @@
         <div class="login-section">
             <img src="css/img/badgerstaffpanel-logo.png" alt="BadgerStaffPanel Logo"/>
             <a id="login" target="_self"
-               href=""> <!-- TODO Needs Discord Redirect Authorization URL -->
+               href="<?php
+               global $discordRedirectAuth;
+               echo $discordRedirectAuth;
+               ?>"> <!-- TODO Needs Discord Redirect Authorization URL -->
                 <div class="login-button-div">
                     <img src="css/img/discord-trans-honey.png"/>
                     <button>Login</button>
