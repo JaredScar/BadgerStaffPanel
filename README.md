@@ -1,4 +1,4 @@
-# BadgerStaffPanel-Official-
+# BadgerStaffPanel
 The official BadgerStaffPanel Codebase
 
 # Images
