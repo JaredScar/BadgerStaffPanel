@@ -1,5 +1,8 @@
 # BadgerStaffPanel
-The official BadgerStaffPanel Codebase
+
+## What is it?
+
+BadgerStaffPanel is a staff panel I wrote for my FiveM server I used to run named Prime Network. It's a pretty basic but effective staff panel which can easily be installed for usage with your FiveM server. Feel free to use it on your servers, just make sure to leave a star and follow on my GitHub as appreciation :)
 
 # Images
 
