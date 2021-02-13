@@ -24,16 +24,22 @@ class q3query {
     private $rconpassword = false;
     private $fp;
     private $lastPing = false;
+    private $success = false;
     public function __construct($address, $port, &$success = NULL, &$errno = NULL, &$errstr = NULL) {
         $this->address = $address;
         $this->port = $port;
         $this->fp = fsockopen("udp://$address", $port, $errno, $errstr, 5);
         if (!$this->fp) {
             $success = false;
+            $this->success = false;
         }
         else {
             $success = true;
+            $this->success = true;
         }
+    }
+    public function isConnected() {
+        return $this->success;
     }
     public function setRconpassword($pw) {
         $this->rconpassword = $pw;

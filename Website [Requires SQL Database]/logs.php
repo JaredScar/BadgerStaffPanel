@@ -28,7 +28,7 @@ if (is_logged_in()) {
         <div class="content-contain">
             <div class="header">Logs</div>
                 <div id="content-view">
-                    <div id="tables-contain">
+                    <div id="tables-contain" class="logs">
                         <table class="table table-striped" id="logs">
                             <thead>
                             <th>Action</th>
@@ -66,7 +66,7 @@ if (is_logged_in()) {
                                 echo '<td><textarea disabled style="resize: none;">' . str_replace(" || ", "\n", $data) . '</textarea></td>';
                                 $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=419B129CA3FE72C01B2982B6A305CE0F&steamids=' . $steamID);
                                 $steamData = json_decode($steamAPI)->response->players[0];
-                                echo '<td><a href="viewUser.php?ID=' . $punisherUID .'" target="_self">' . $steamData->personaname . '</a></td>';
+                                echo '<td><a href="viewUser.php?ID=' . $punisherUID .'" target="_self">' . $punisherUID . '</a></td>';
                                 echo '<td><a href="viewUser.php?ID=' . $punishedUID . '" target="_self">' . $punishedUID . '</a></td>';
                                 echo '<td>' . $date . '</td>';
                                 echo '</tr>';

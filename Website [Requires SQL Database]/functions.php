@@ -90,6 +90,16 @@ function getSteamFromDiscordID($id) {
     }
     return false; // Didn't execute successfully
 }
+function getSteamFromUserID($id) {
+    $sql = getSQL();
+    $stmt = $sql->prepare("SELECT steamID FROM Users WHERE `ID` = ?;");
+    $stmt->bind_param("i", $id);
+    if($stmt->execute()) {
+        $res = $stmt->get_result();
+        return $res->fetch_assoc()['steamID'];
+    }
+    return false; // Didn't execute successfully
+}
 function getUserDiscordID() {
     return $_SESSION['discord'];
 }

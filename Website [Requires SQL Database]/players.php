@@ -27,7 +27,8 @@ if (is_logged_in()) {
                             <input type="search" placeholder="Badger" id="players-searchbar" onkeyup="getAutoCompleteKeyup();" />
                             <button onclick="getAutoComplete();">Search</button>
                         </div>
-                        <table class="table table-striped" id="players">
+                        <div id="table-wrapper">
+                        <table class="table table-striped " id="players">
                             <thead>
                             <tr>
                                 <th scope="col">User ID</th>
@@ -74,6 +75,7 @@ if (is_logged_in()) {
                         </table>
                         <button id="load-more" onclick="loadMoreUsers();">Load more users</button>
                         <img id="load-gif" src="css/img/loading-gif.gif" />
+                        </div>
                     </div>
                 </div>
             </div>

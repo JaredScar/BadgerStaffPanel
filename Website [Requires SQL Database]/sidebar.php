@@ -16,6 +16,7 @@ global $serverName;
             <div class="row"><a href="players.php" target="_self"><span class="main-sect"><i class="glyphicon glyphicon-user"></i> Players</span></a></div>
             <div class="row"><a href="logs.php" target="_self"><span class="main-sect"><i class="glyphicon glyphicon-list-alt"></i> Logs</span></a></div>
             <div class="row"><a href="account.php" target="_self"><span class="main-sect"><i class="glyphicon glyphicon-cog"></i> Account</span></a></div>
+            <div class="row sub-title"><a href="https://discord.com/invite/WjB5VFz" target="_self"><span id="sub-title">StaffPanel created by Badger#0002</span></a></div>
     </div>
 </div>
 </body>

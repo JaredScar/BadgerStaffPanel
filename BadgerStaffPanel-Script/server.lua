@@ -758,12 +758,14 @@ AddEventHandler('playerConnecting', function(playerName, kickReason, deferrals)
             MySQL.Async.execute('INSERT INTO `Users` VALUES (@ID, @sid, @name, @gameLic, @live, @xbl, @disc, @ip) ' .. 
                     'ON DUPLICATE KEY UPDATE lastPlayerName = @name;', {['@sid'] = steamId, ['@name'] = playerName, 
                     ['@ID'] = 0, ['@gameLic'] = gameLic, ['@live'] = live, ['@xbl'] = xbl, ['@disc'] = disc, ['@ip'] = ip})
+            print("[BadgerStaffPanel] Player " .. GetPlayerName(source) .. " has been inserted into the database..." );
         else 
             -- Update their name, gameLic, live, xbl, disc, ip:
             MySQL.Async.execute('UPDATE `Users` SET `steamID` = @sid, ' ..
                 '`lastPlayerName` = @name, `gameLicense` = @gameLic, `live` = @live, `xbl` = @xbl, `discord` = @disc, ' ..
                 '`ip` = @ip WHERE `ID` = @ID', {['@sid'] = steamId, ['@name'] = playerName, 
                     ['@ID'] = userID, ['@gameLic'] = gameLic, ['@live'] = live, ['@xbl'] = xbl, ['@disc'] = disc, ['@ip'] = ip})
+                    print("[BadgerStaffPanel] Player " .. GetPlayerName(source) .. " has had their information updated in the database..." );
         end
     end
     deferrals.done()

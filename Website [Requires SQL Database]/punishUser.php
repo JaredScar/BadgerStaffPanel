@@ -13,32 +13,18 @@ $discordID = 'discord:' . getUserDiscordID();
 
 $_SESSION['Permissions'] = getPermissions();
 require_once 'config.php';
-require __DIR__ . '/../SourceQuery/bootstrap.php';
-//use 'classes\SourceQuery\SourceQuery';
-require_once 'classes/SourceQuery/SourceQuery';
+require_once 'classes/q3query.php';
 global $serverIP;
-global $port;
+global $server_port;
 global $rconPassword;
 checkSessionTimer();
 $sql = getSQL();
-define( 'SQ_SERVER_ADDR', $serverIP );
-	define( 'SQ_SERVER_PORT', $port );
-	define( 'SQ_TIMEOUT',     1 );
-	define( 'SQ_ENGINE',      SourceQuery::SOURCE );
+
 	// Edit this <-
 	
-	$rcon = new SourceQuery( );
-	
-	try
-	{
-		$rcon->Connect( SQ_SERVER_ADDR, SQ_SERVER_PORT, SQ_TIMEOUT, SQ_ENGINE );
-		
-		$rcon->SetRconPassword( $rconPassword );
-	}
-	catch( Exception $e )
-	{
-		echo $e->getMessage( );
-	}
+	$rcon = new q3query($serverIP, $server_port);
+	$rcon->setRconpassword($rconPassword);
+
 if (is_logged_in()) {
     if (is_staff()) {
         switch ($punishmentType) {
@@ -49,13 +35,16 @@ if (is_logged_in()) {
                     // Check if they have Permission.Note
                     if ($permVal === "Permission.Note") {
                         // They have perms to do it, do it
-                        $stmt = $sql->prepare('INSERT INTO `Notes` (`User_ID`, `steamIDStaff`, `Note`) VALUES (?, ?, ?);');
-                        $stmt->bind_param('iss', $userID, getSteamFromDiscordID(getUserDiscordID()), $msg);
-                        //TODO MAKE BELOW MORE SOPHISTICATED:
+                        $stmt = $sql->prepare('INSERT INTO `Notes` (`User_ID`, `steamIDStaff`, `steamIDPlayer`, `Note`) VALUES (?, ?, ?, ?);');
+                        $puniserSteam = strval(getSteamFromDiscordID(getUserDiscordID()));
+                        $punishedSteam = strval(getSteamFromUserID($userID));
+                        $stmt->bind_param('isss', $userID, $puniserSteam, $punishedSteam, $msg);
                         if ($stmt->execute()) {
-                            header('Location: ' . getLastPage() . '&result=success');
+                            header('Location: ' . getLastPage() . '');
+                            //echo "SUCCESS";
                         } else {
-                            header('Location: index.php' . getLastPage() . '&result=failure');
+                            header('Location: ' . getLastPage() . '');
+                            //echo "FAILURE";
                         }
                         return;
                     }
@@ -71,8 +60,8 @@ if (is_logged_in()) {
                         //$stmt = $sql->prepare('INSERT INTO `Warns` (`User_ID`, `reason`) VALUES (?, ?);');
                         //$stmt->bind_param('is', $userID, $msg);
                         // Execute it through RCON (SQL through RCON too):
-                        $rcon->Rcon("panelWarn " . $userID . " " . $discordID . " " . $msg);
-                        header("Location: " . getLastPage() . "&result=success");
+                        $rcon->rcon("panelWarn " . $userID . " " . $discordID . " " . $msg);
+                        header("Location: " . getLastPage() . "");
                         return;
                     }
                 }
@@ -87,8 +76,8 @@ if (is_logged_in()) {
                         //$stmt = $sql->prepare('INSERT INTO `Kicks` (`User_ID`, `reason`) VALUES (?, ?);');
                         //$stmt->bind_param('is', $userID, $msg);
                         // Execute it through RCON (SQL through RCON too):
-                        $rcon->Rcon("panelKick " . $userID . " " . $discordID . " " . $msg);
-                        header("Location: " . getLastPage() . "&result=success");
+                        $rcon->rcon("panelKick " . $userID . " " . $discordID . " " . $msg);
+                        header("Location: " . getLastPage() . "");
                         return;
                     }
                 }
@@ -105,23 +94,23 @@ if (is_logged_in()) {
                         //$tempbanTime
                         switch (strtolower($tempbanType)) {
                             case "hour":
-                                $rcon->Rcon("panelTempban " . $userID . " " . $tempbanTime . "h " . $discordID . " "
+                                $rcon->rcon("panelTempban " . $userID . " " . $tempbanTime . "h " . $discordID . " "
                                 . $msg);
                                 break;
                             case "day":
-                                $rcon->Rcon("panelTempban " . $userID . " " . $tempbanTime . "d " . $discordID . " "
+                                $rcon->rcon("panelTempban " . $userID . " " . $tempbanTime . "d " . $discordID . " "
                                     . $msg);
                                 break;
                             case "week":
-                                $rcon->Rcon("panelTempban " . $userID . " " . $tempbanTime . "w " . $discordID . " "
+                                $rcon->rcon("panelTempban " . $userID . " " . $tempbanTime . "w " . $discordID . " "
                                     . $msg);
                                 break;
                             case "month":
-                                $rcon->Rcon("panelTempban " . $userID . " " . $tempbanTime . "m " . $discordID . " "
+                                $rcon->rcon("panelTempban " . $userID . " " . $tempbanTime . "m " . $discordID . " "
                                     . $msg);
                                 break;
                         }
-                        header("Location: " . getLastPage() . "&result=success");
+                        header("Location: " . getLastPage() . "");
                         return;
                     }
                 }
@@ -136,16 +125,16 @@ if (is_logged_in()) {
                         //$stmt = $sql->prepare('INSERT INTO `Bans` (`User_ID`, `reason`) VALUES (?, ?);');
                         //$stmt->bind_param('is', $userID, $msg);
                         // Execute it through RCON (SQL through RCON too):
-                        $rcon->Rcon("panelBan " . $userID . " " . $discordID . " " . $msg);
-                        header("Location: " . getLastPage() . "&result=success");
+                        $rcon->rcon("panelBan " . $userID . " " . $discordID . " " . $msg);
+                        header("Location: " . getLastPage() . "");
                         return;
                     }
                 }
                 break;
         }
     } else {
-        // Not staff TODO
+        // Not staff
     }
 } else {
-    // Not logged in TODO
+    // Not logged in
 }

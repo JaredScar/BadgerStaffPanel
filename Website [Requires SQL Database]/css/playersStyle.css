@@ -7,10 +7,24 @@ div#content-players {
     margin-bottom: 50px;
     border-radius: 5px;
     padding: 30px;
-    display: table;
+}
+div#table-wrapper {
+    overflow-y: auto;
+    height: 70vh;
+}
+
+div#table-wrapper thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+}
+div#table-wrapper table {
+    border-collapse: separate;
 }
 div#content-players div#search-bar {
-    float: right;
+    text-align: right;
     margin-bottom: 30px;
 }
 div#content-players div#search-bar input {

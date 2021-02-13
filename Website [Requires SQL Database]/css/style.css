@@ -138,6 +138,16 @@ div#online-players {
     margin-right: auto;
     overflow-y: auto;
 }
+div#online-players table {
+    border-collapse: separate;
+}
+div#online-players thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+}
 div#online-players thead {
     font-weight: bolder;
     font-size: 24px;

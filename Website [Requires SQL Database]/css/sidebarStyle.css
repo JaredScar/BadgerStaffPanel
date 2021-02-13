@@ -26,6 +26,22 @@ div#main-sidebar a {
 div#main-sidebar div.row.main-title {
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+}
+div#main-sidebar div.row.sub-title a {
+    margin-bottom: 20px;
+}
+div#main-sidebar div.row.sub-title {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    word-wrap: break-word;
+    bottom: 0;
+    position: absolute;
+    width: 300px;
+}
+div#main-sidebar span#sub-title {
+    font-size: 22px;
 }
 div#main-sidebar span#main-title {
     font-size: 32px;

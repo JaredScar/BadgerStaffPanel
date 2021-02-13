@@ -85,6 +85,7 @@ if (is_logged_in()) {
                         echo '</span>'
                         ?>
                     </div> <!-- End profile-info -->
+                    <div id="account-wrapper">
                     <div id="tables-contain">
                         <div id="note-info">
                             <h2>Notes</h2>
@@ -114,7 +115,8 @@ if (is_logged_in()) {
                                     $steamID = bchexdec(str_replace("steam:", "", $row[$issuedByField]));
                                     if ($steamID != 0) {
 										// TODO Replace {KEY} with your Steam API key
-                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={KEY}&steamids=' . $steamID);
+                                        $steamAPI = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' .
+                                            $steamAPIkey . '&steamids=' . $steamID);
                                         $steamData = json_decode($steamAPI)->response->players[0];
                                         echo '<td>' . $steamData->personaname . '</td>';
                                     }
@@ -289,6 +291,7 @@ if (is_logged_in()) {
                             </table>
                         </div>
                     </div> <!-- End tables-contain -->
+                    </div>
                 </div> <!-- End content-view -->
             </div> <!-- End content-contain -->
         </div>

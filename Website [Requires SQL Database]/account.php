@@ -33,7 +33,7 @@ if (is_logged_in()) {
             <div class="content-contain">
                 <div class="header">Your Account Details</div>
                 <a href="logout.php"><button id="logout">Logout</button></a>
-                <div id="content-view">
+                <div id="content-view-account">
                     <div id="profile-info">
                         <?php
                         $sql = getSQL();
@@ -91,7 +91,8 @@ if (is_logged_in()) {
                         echo '</span>'
                         ?>
                     </div> <!-- End profile-info -->
-                    <div id="tables-contain">
+                    <div id="account-wrapper">
+                    <div id="tables-contain-account">
                         <div id="note-info">
                             <h2>Notes</h2>
                             <table class="table table-striped">
@@ -297,6 +298,7 @@ if (is_logged_in()) {
                             </table>
                         </div>
                     </div> <!-- End tables-contain -->
+                    </div>
                 </div> <!-- End content-view -->
             </div> <!-- End content-contain -->
         </div>
@@ -334,7 +336,7 @@ if (is_logged_in()) {
                 <div class="content-contain">
                     <div class="header">Your Account Details</div>
                     <a href="logout.php"><button id="logout">Logout</button></a>
-                    <div id="content-view">
+                    <div id="content-view-account">
                         <div id="profile-info">
                             <?php
                             $sql = getSQL();
@@ -392,7 +394,8 @@ if (is_logged_in()) {
                             echo '</span>'
                             ?>
                         </div> <!-- End profile-info -->
-                        <div id="tables-contain">
+                        <div id="account-wrapper">
+                        <div id="tables-contain-account">
                             <div id="warn-info">
                                 <h2>Warns</h2>
                                 <table class="table table-striped">
@@ -547,6 +550,7 @@ if (is_logged_in()) {
                                 </table>
                             </div>
                         </div> <!-- End tables-contain -->
+                        </div>
                     </div> <!-- End content-view -->
                 </div> <!-- End content-contain -->
             </div> <!-- End content-contain -->

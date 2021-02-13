@@ -96,15 +96,25 @@
                 <div id="online-players">
                     <?php
                     // Get players and display them
-                    // TODO Change this with server IP in config
+                    function contains($needle, $haystack)
+                    {
+                        return strpos($haystack, $needle) !== false;
+                    }
                     $data = array();
                     $players = json_decode($content);
                     foreach ($players as $player) {
                         $ping = $player->ping;
                         $name = $player->name;
                         $id = $player->id;
-                        $gameLicense = $player->identifiers[1];
-                        $userID = getUserIDFromGameLicense($gameLicense);
+                        $identifiers = $player->identifiers;
+                        $userID = null;
+                        foreach ($identifiers as $identifier) {
+                            if (contains("license", $identifier)) {
+                                if ($userID == null || $userID == '') {
+                                    $userID = getUserIDFromGameLicense($identifier);
+                                }
+                            }
+                        }
                         $playerData = [$id, $name, $ping, $userID];
                         array_push($data, $playerData);
                     }
