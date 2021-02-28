@@ -1,9 +1,3 @@
-RegisterNetEvent('BadgerStaff:NotePlayer')
-RegisterNetEvent('BadgerStaff:WarnPlayer')
-RegisterNetEvent('BadgerStaff:KickPlayer')
-RegisterNetEvent('BadgerStaff:TempbanPlayer')
-RegisterNetEvent('BadgerStaff:BanPlayer')
-
 prefix = '^7[^1BadgerStaffPanel^7]^3 '
 discordWebHook = ''
 
